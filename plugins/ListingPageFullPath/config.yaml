@@ -24,7 +24,7 @@ list_properties:
                         @folders = reverse @folders;
                         my @folder_labels = ();
                         for my $folder (@folders) {
-                            push (@folder_labels, $folder->label);
+                            push (@folder_labels, MT::Util::encode_html($folder->label));
                         }
                         return join('/', @folder_labels);
                     }
